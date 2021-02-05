@@ -1,6 +1,6 @@
 {
   "name": "jspm-github",
-  "version": "0.14.15-kru",
+  "version": "0.14.16",
   "description": "jspm GitHub endpoint",
   "main": "github.js",
   "scripts": {
