@@ -430,10 +430,10 @@ GithubLocation.prototype = {
         apiWarned = true;
       }
       
-      if (res.headers.status.match(/^401/))
-        return apiFailWarn('lack of authorization', true);
-      if (res.headers.status.match(/^406/))
-        return apiFailWarn('insufficient permissions. Ensure you have public_repo access.');
+      // if (res.headers.status.match(/^401/))
+      //   return apiFailWarn('lack of authorization', true);
+      // if (res.headers.status.match(/^406/))
+      //   return apiFailWarn('insufficient permissions. Ensure you have public_repo access.');
       if (res.headers['x-ratelimit-remaining'] == '0') {
         if (self.auth)
           return apiFailWarn('the rate limit being reached, which will be reset in `' + 
