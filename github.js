@@ -429,10 +429,10 @@ GithubLocation.prototype = {
             + (showAuthCommand ? '\nTo resolve use %jspm registry config github% to configure the credentials, or update them in your ~/.netrc file.' : ''));
         apiWarned = true;
       }
-      
-      if (res.statusCode.match(/^401/))
+
+      if (res.statusCode === 401)
         return apiFailWarn('lack of authorization', true);
-      if (res.statusCode.match(/^406/))
+      if (res.statusCode === 406)
         return apiFailWarn('insufficient permissions. Ensure you have public_repo access.');
       if (res.headers['x-ratelimit-remaining'] == '0') {
         if (self.auth)
